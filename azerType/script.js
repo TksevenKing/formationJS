@@ -1,73 +1,60 @@
 console.log("Hello, world");
 
 
-let score = 0;
+
 
 let i = 0;
-//1. Proposez un mot l'utilisateur
 
-let choix = prompt("Veuillez choisir la liste: mots ou phrases ");
+// fonction Principale pour lancer le jeu
+lancerJeu()
 
-while(choix !== "mots" && choix !== "phrases"){
-    choix = prompt("Mots ou Phrases? : ");
-};
+function afficherResultat(score, nombreQuestion){
+    console.log('Votre score est de ' + score + ' sur ' + nombreQuestion)
+}
 
-if(choix === "mots"){
-    // Si il choisit "mots"
-    for(let i=0; i< listeMots.length; i++){
-        let mot = prompt("Saisir un mot:  "+ listeMots[i])
+function choisirPhrasesOuMots(){
+    let choix = prompt("Veuillez choisir la liste: mots ou phrases ");
 
-        // estMot(mot)
-        if(mot === listeMots[i]){
-            console.log("Correct vous avez tapez le bon mot")
+    while(choix !== "mots" && choix !== "phrases"){
+        choix = prompt("Mots ou Phrases? : ");
+    };
+    return choix
+}
+
+
+
+function lancerBoucleDeJeu(listeMotsOuPhrase){
+    let score = 0
+    for(let i=0; i< listeMotsOuPhrase.length; i++){
+        let phrase = prompt("Saisir un mot: "+ listeMotsOuPhrase[i])
+    
+    
+        if(phrase === listeMotsOuPhrase[i]){
+            console.log("Correct vous avez tapez le bon mot ou phrase")
             score++
-        }else{
-            console.log("Incorrect vous n'avez pas tapez le bon mot")
         }
     }
-    let messageScore = retournerMessageScore(score, listeMots.length)
-    console.log(messageScore)
 
-}else{
-    // S'il choisit phrase
-
-
-    for(let i=0; i< listePhrases.length;i++){
-        let phrase = prompt("Saisir un mot: "+ listePhrases[i])
-
-        // estPhrase(phrase)
-        if(phrase === listePhrases[i]){
-            console.log("Correct")
-            score++
-        }else{
-            console.log("Incorrect")
-        }
-
-        let messageScore = retournerMessageScore(score, listePhrases.length)
-        console.log(messageScore)
+    return score
 }
-}
-function estMot(mot){
 
-    if(mot === listeMots[i]){
-        console.log("Correct vous avez tapez le bon mot")
-        score++
+function lancerJeu(){
+    let score = 0;
+    let nbMotsProposez = 0 ;
+    //1. Proposez un mot l'utilisateur
+
+    let choix = choisirPhrasesOuMots() 
+
+    //2. verifier si le mot saisie est correct ou non
+    if(choix === "mots"){
+        // Si il choisit "mots"
+        score = lancerBoucleDeJeu(listeMots)
+        nbMotsProposez = listeMots.length
+
     }else{
-        console.log("Incorrect vous n'avez pas tapez le bon mot")
+        // S'il choisit phrase
+        score = lancerBoucleDeJeu(listePhrases)
+        nbMotsProposez = listePhrases.length
     }
-    console.log("Votre score est "+ score + " sur " + listeMots.length)
-}
-function estPhrase(phrase){
-    if(phrase === listePhrases[i]){
-        console.log("Correct")
-        score++
-    }else{
-        console.log("Incorrect")
-    }
-
-}
-
-function retournerMessageScore(score, nombreQuestion){
-    let message = 'Votre score est de ' + score + ' sur ' + nombreQuestion
-    return message
+    afficherResultat(score,nbMotsProposez)
 }
