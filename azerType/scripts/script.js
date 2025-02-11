@@ -6,7 +6,28 @@ console.log("Hello, world");
 let i = 0;
 
 // fonction Principale pour lancer le jeu
-lancerJeu()
+
+
+function lancerJeu(){
+    let score = 0;
+    let nbMotsProposez = 0 ;
+    //1. Proposez un mot l'utilisateur
+
+    let choix = choisirPhrasesOuMots() 
+
+    //2. verifier si le mot saisie est correct ou non
+    if(choix === "mots"){
+        // Si il choisit "mots"
+        score = lancerBoucleDeJeu(listeMots)
+        nbMotsProposez = listeMots.length
+
+    }else{
+        // S'il choisit phrase
+        score = lancerBoucleDeJeu(listePhrases)
+        nbMotsProposez = listePhrases.length
+    }
+    afficherResultat(score,nbMotsProposez)
+}
 
 function afficherResultat(score, nombreQuestion){
     console.log('Votre score est de ' + score + ' sur ' + nombreQuestion)
@@ -38,23 +59,3 @@ function lancerBoucleDeJeu(listeMotsOuPhrase){
     return score
 }
 
-function lancerJeu(){
-    let score = 0;
-    let nbMotsProposez = 0 ;
-    //1. Proposez un mot l'utilisateur
-
-    let choix = choisirPhrasesOuMots() 
-
-    //2. verifier si le mot saisie est correct ou non
-    if(choix === "mots"){
-        // Si il choisit "mots"
-        score = lancerBoucleDeJeu(listeMots)
-        nbMotsProposez = listeMots.length
-
-    }else{
-        // S'il choisit phrase
-        score = lancerBoucleDeJeu(listePhrases)
-        nbMotsProposez = listePhrases.length
-    }
-    afficherResultat(score,nbMotsProposez)
-}
