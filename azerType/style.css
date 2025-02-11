@@ -1,0 +1,66 @@
+body {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+header h1 {
+    font-weight:bold;
+    font-size:3em;
+    color:#e46124 ;
+}
+#en-tete:first-child {
+    color:#e46124 ;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.box {
+    background-color: #e3661e;
+    height: 40%;
+    width: 60%;
+    margin: 10%;
+    border-radius: 20px;
+    color: #fff;
+}
+.proposition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.zoneProposition {
+    background-color: #fff;
+    text-align: center;
+    height: 50px;
+    width: 80%;
+    margin: 8px;
+    padding-top: 15px;
+    border-radius: 15px;
+    color: #e3661e;
+    font-weight: bold;
+}
+#champSaisie input{
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+}
+#inputSaisie {
+    width: 60%;
+}
+#score {
+    padding: 10px;
+}
+#partager {
+    margin: 5px;
+}
+#partager input {
+    padding: 3px;
+    border-radius: 5px;
+    border: none;
+}
+footer {
+    background-color: #e3661e;
+    padding: 20px;
+    color: #fff;
+    position: sticky;
+}

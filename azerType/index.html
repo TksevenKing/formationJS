@@ -4,12 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>azerType</title>
-    <script src="scripts/config.js"></script> <!-- config.js d'abord car contient des trucs qui seront utiliser par script.js -->
-    <script src="scripts/script.js"></script>
-    <script src="scripts/main.js"></script>
+    <script defer src="scripts/config.js"></script> <!--config.js d'abord car contient des trucs qui seront utiliser par script.js -->
+    <script defer src="scripts/script.js"></script>
+    <script  defer src="scripts/main.js"></script> <!-- defer pour charger le HTML avant le JS -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+    <header id="header">
+        <h1>TksevenType</h1>
+    </header>
+
+    <main>
+        <div id="en-tete">
+            <h3>L'application pour ecrire plus vite !</h3>
+            <p>AzerType est une application en ligne pour apprendre a tapez plus vite au clavier.</p>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <p>Choisissez votre option et tapez la propositoin qui s'affiche dans le champ ci-dessous</p>
+
+                <div class="zoneChoix">
+                    <!-- <form action="" method="post"> -->
+                        <input type="radio" name="optionSource" id="mots" value="1"  checked>
+                        <label for="mots">Mots</label>
+                        <input type="radio" name="optionSource" id="phrases" value="2">
+                        <label for="phrases">Phrases</label>
+                    <!-- </form> -->
+                </div>
+                <div class="proposition">
+                    <div class="zoneProposition">
+                        
+                    </div>
+                </div>
+
+                <div id="champSaisie">
+                    <!-- <form action=""> -->
+                        <input type="text" name="saisie" id="inputSaisie">
+                        <button id="btnValidation" onfocus="true">Valider</button>
+                    <!-- </form> -->
+
+                </div>
+                <div id="score">
+                   Votre score est : <span></span>
+                </div>
+                <div id="partager">
+                    <input type="button"id="partager" name="partager" value="Partager">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        Copyright : OumarKingDev
+    </footer>
     
+
 </body>
 </html>

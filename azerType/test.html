@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script defer src="scripts/main.js"></script> -->
+</head>
+<body>
+
+    <div class="zoneChoix">
+        <input type="radio" name="optionSource" id="mots" value="1" class="flex btn" checked>
+        <label for="mots">Mots</label>
+        <input type="radio" name="optionSource" id="phrases" value="2">
+        <label for="phrases">Phrases</label>
+    </div>
+    <div class="zoneProposition">
+        Entrez le mot : <span>Cachalot</span>
+    </div>
+
+    <form action="">
+        <input type="button" value="btn1" id="btn1">
+        <input type="button" value="btn2" id="btn2">
+    </form>
+    
+    <form>
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Votre email" required><br>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Votre message" required></textarea><br>
+        <input type="submit" value="Envoyer">
+    </form>
+
+    <script >
+        let maBaliseDiv = document.getElementById("zoneProposition")
+        // console.log(maBaliseDiv.innerText)
+
+        // je peux acceder avec querySelector comme en CSS
+        let allSpan = document.querySelector("#zoneProposition span")   // ici on ajoute le # deavnt
+        // console.log(allSpan)
+
+        let listInputRadio = document.querySelectorAll(".zoneChoix input")
+        console.log(listInputRadio)
+
+        for(let i=0 ;i < listInputRadio.length; i++){
+            console.log(listInputRadio[i])
+        }
+
+        let attInput = document.getElementById("mots")
+
+        attInput.setAttribute("value", "0")
+        console.log(attInput)
+
+        attInput.classList.add("img")
+        console.log(attInput)
+
+        attInput.classList.remove("btn")
+        console.log(attInput)
+
+        let nouvelElt = document.createElement("div")
+        nouvelElt.innerHTML = "nouveau text cree grace a creatElt"
+        let ancien = document.querySelector(".zoneChoix")
+        ancien.appendChild(nouvelElt)
+        console.log(ancien)
+
+        // ====== Interpolation avec ( ` ) en generant directly du Html contenant du JS 
+        let contenuTitre = "Mon Titre"
+
+        let InterpolationDiv = `<div>
+                        <h1>${contenuTitre}</h1>
+                   
+                   </div>`;
+
+
+        // ancien.innerHTML = InterpolationDiv 
+
+        let btn1 = document.getElementById("btn1")
+        let btn2 = document.getElementById("btn2")
+
+        btn1.addEventListener("click", () => {
+            console.log("bnt1 was clicked")
+        })
+        btn2.addEventListener("click", () => {
+            console.log("bnt2 was clicked")
+        })
+
+        document.addEventListener('keydown', (event) => {
+            console.log(event.key)
+        })
+        document.addEventListener('click', (event) => {
+            console.log(event.target)
+        })
+
+    </script>
+</body>
+</html>
