@@ -18,20 +18,32 @@
         Entrez le mot : <span>Cachalot</span>
     </div>
 
-    <form action="">
+    <form id="btn">
         <input type="button" value="btn1" id="btn1">
         <input type="button" value="btn2" id="btn2">
     </form>
     
-    <form>
+    <form id="form">
         <label for="name">Nom</label>
         <input type="text" id="name" name="name" placeholder="Votre nom" required><br>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Votre email" required><br>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Votre message" required></textarea><br>
+        <label for="js">Javascript</label>
+        <input type="checkbox" name="javascript" id="js">
+        <label for="c">C++</label>
+        <input type="checkbox" name="C++" id="c">
+        <label for="python">Python</label>
+        <input type="checkbox" name="python" id="python"><br>
+
+        <label for="h">homme</label>
+        <input type="radio" name="sexe" id="h" value="homme">
+        <label for="f">femme</label>
+        <input type="radio" name="sexe" id="f" value="femme"><br>
+
         <input type="submit" value="Envoyer">
     </form>
+
+    <div id="btn"></div>
+
+    <ul id="list2"></ul>
 
     <script >
         let maBaliseDiv = document.getElementById("zoneProposition")
@@ -92,6 +104,73 @@
         document.addEventListener('click', (event) => {
             console.log(event.target)
         })
+
+        // Creer un elt avec JS 
+        // Avec creatElement
+        let btn = document.createElement("button")
+        console.log(btn)
+        btn.innerHTML = "btn1"
+        let body = document.querySelector("body")
+        body.appendChild(btn)
+
+        // Avec innerHTML i.e en ecrivant du html dans du JS
+        let btn3 = `<button>btn3</button>`;
+        let div = document.getElementById("btn")
+
+        div.innerHTML = btn3
+
+        let name = "Oumar"
+
+        let age = 22;
+
+        let info = `<p>Votre nom est ${name} et vous avez ${age} ans </p>`;
+
+        div.innerHTML = info
+        let tab = ["bentley", "RR", "ferrari"]
+        let contenu = ""
+        let list = `<ul>`
+            for(let index = 0; index<3; index ++){
+                contenu += `<li>${tab[index]}</li>`
+            }
+        list += contenu + `</lu>`
+
+        div.innerHTML = list
+
+        // Ici avec CreateElement
+        let ul = document.getElementById("list2")
+
+        for(let index = 0; index<3;index++){
+            let li = document.createElement("li")
+            li.innerHTML = tab[index]
+            ul.appendChild(li)
+        }
+
+        // Les formulaires pour eviter le chargement faire preventDefault sur le formulaire
+        let form = document.querySelector("form[id='form']")
+        form.addEventListener("submit", (event) => {
+            event.preventDefault() 
+            console.log("pas de chargement de la page")
+        })
+
+        let nom = document.getElementById("name")
+        let js = document.getElementById("js")
+        let c = document.getElementById("c")
+        let python = document.getElementById("python")
+        let listRadio = document.querySelectorAll('input[type="radio"]')
+        console.log(listRadio)
+
+        console.log(nom)
+        console.log(js.checked)
+        let sexe = ""
+        for(let i = 0; i< 2; i++){
+            if(listRadio[i].checked){
+                sexe = listRadio[i].value
+                break
+            }
+        }
+
+
+        
 
     </script>
 </body>
