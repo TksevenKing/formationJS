@@ -17,9 +17,9 @@ let varSimple2 = varSimple1; // ceci est une copie par valeur
 
 // Mais pour les types complexes comme les tableuax et les objets ca ne marche pas 
 
-///////////////////////
+/////////////////////////
 // Copie par référence
-///////////////////////
+/////////////////////////
 let tab1 = ["volvo", "toyota", "Supra"];
 let tab2 = tab1; // Ceci est une copie par reference car tab2 et tab1 poite vers le meme contenu
 //tab2.pop(); // va modifier aussi tab1 alors qu'on ne veut pas ca
