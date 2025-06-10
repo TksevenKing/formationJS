@@ -1,6 +1,8 @@
-# 🧠 Jeu de Vitesse de Frappe
+# 🧠 Jeu de Vitesse de Frappe AzerType
 
 Ce projet est une application web simple et interactive qui permet d'améliorer sa vitesse de frappe au clavier. À travers des mots ou des phrases proposés, l'utilisateur peut s'entraîner et être évalué sur la base du nombre de mots correctement tapés.
+
+![azertype1](https://github.com/user-attachments/assets/845df2bc-c31f-45bb-bdce-93482335c23d)
 
 ## 🚀 Fonctionnalités
 
@@ -35,4 +37,4 @@ Aucune installation nécessaire. Il suffit de :
 
 2. Ouvrir le fichier dans votre naviguateur
 ✨ Captures d'écran
-![azertype1](https://github.com/user-attachments/assets/845df2bc-c31f-45bb-bdce-93482335c23d)
+
