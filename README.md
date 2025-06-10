@@ -29,3 +29,9 @@ Aucune installation nécessaire. Il suffit de :
 1. Télécharger le projet ou cloner le dépôt :
    ```bash
    git clone https://github.com/TksevenKing/formationJS.git
+
+   Ouvrir le fichier index.html dans votre navigateur.
+
+2. Ouvrir le fichier dans votre naviguateur
+✨ Captures d'écran
+
