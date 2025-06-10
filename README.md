@@ -13,6 +13,7 @@ Ce projet est une application web simple et interactive qui permet d'améliorer 
 
 - **HTML5**
 - **CSS3**
+
 - **JavaScript (Vanilla)**
 
 ## 🎮 Comment jouer ?
@@ -34,4 +35,4 @@ Aucune installation nécessaire. Il suffit de :
 
 2. Ouvrir le fichier dans votre naviguateur
 ✨ Captures d'écran
-
+![azertype1](https://github.com/user-attachments/assets/845df2bc-c31f-45bb-bdce-93482335c23d)
